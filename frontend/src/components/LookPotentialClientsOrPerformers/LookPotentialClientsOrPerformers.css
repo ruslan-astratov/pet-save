@@ -1,0 +1,200 @@
+.allApplications {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../bg3.jpg");
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+}
+
+.bg-color {
+  background-color: rgb(50, 214, 58) !important;
+}
+
+.wrapper-for-two-forms {
+  margin-bottom: 40px;
+}
+
+.allApplications::before {
+  content: "";
+  display: block;
+  position: absolute;
+  /* z-index: 2; */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.allApplications-heading {
+  position: relative;
+  z-index: 2;
+  color: #ffdd36;
+}
+
+.heading-block {
+  position: relative;
+  z-index: 2;
+  color: #000000;
+  border-bottom: 1px solid black;
+  margin: 0;
+}
+
+/* Заголовки форм */
+.heading-of-block {
+  color: #ffdd36;
+}
+
+/* Список с заявками  */
+.application-block-clients-or-workers{
+  width: 400px;
+  height: 442px;
+
+  background-color: #ffdd36;
+
+  border-radius: 10px;
+
+  overflow-y: auto; 
+}
+
+
+/* Кнопки - удалить заявку  */
+.delete-button {
+  transition: all 0.3s ease;
+
+  display: inline-block;
+  background-color: #1e88e5;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+  padding: 2px;
+  color: aliceblue;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+  background-color: rgb(23, 86, 202);
+}
+
+.delete-button:active {
+  background-color: rgb(20, 37, 83);
+}
+
+/* ------------------------------- Кнопка - перейти на страницу с возможными клиентами/исполнителями */
+.button-to-redirect-on-searchpage {
+  display: inline-block;
+  background-color: rgb(214, 50, 214);
+
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 2px;
+  transition: all 0.3s ease;
+  color: aliceblue;
+
+  margin-right: 10px;
+}
+
+.button-to-redirect-on-searchpage:hover {
+  cursor: pointer;
+  background-color: rgb(68, 133, 39);
+}
+
+.button-to-redirect-on-searchpage:active {
+  cursor: pointer;
+  background-color: rgb(64, 82, 48);
+}
+/* ----------------------------- // Кнопка - перейти на страницу с возможными клиентами/исполнителями */
+
+/* ---------- Кнопка редактировать заявку */
+.change-button {
+  display: inline-block;
+  background-color: rgb(218, 80, 144);
+
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 2px;
+  transition: all 0.3s ease;
+  color: aliceblue;
+}
+
+.change-button:hover {
+  cursor: pointer;
+  background-color: rgb(189, 13, 95);
+}
+
+.change-button:active {
+  cursor: pointer;
+  background-color: rgb(102, 43, 71);
+}
+/* --------------- Кнопка редактировать заявку----------------------- */
+
+/* Наш элемент списка */
+.list-item {
+  list-style-type: none;
+  border-bottom: 1px solid black;
+  padding-bottom: 4px;
+  padding-top: 4px;
+
+  font-size: 12px;
+}
+
+/* Кнопка - Создать новую заявку */
+.link-to-create-application {
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 3;
+
+  font-family: "Prata", serif;
+
+  background-color: #32dad2;
+
+  border-radius: 5px;
+
+  outline: none;
+  border: none;
+}
+
+.link-to-create-application:hover {
+  cursor: pointer;
+  outline: none;
+  background-color: #32504e;
+}
+
+
+/* Ярлык */
+.label {
+  font-size: 10px;
+  display: block;
+}
+
+
+.left-form-without-mg {
+  margin: 0;
+}
+
+.application-block-height {
+  height: 442px !important;
+}
+
+
+
+.isVisited {
+  color: #747164;
+}
+
+.without-pg {
+  padding-top: 50px !important;
+}
+
+
+.sending-bage {
+  color: red;
+  font-size: 10px;
+}
+
+
+.gifting-bage {
+  color: rgb(147 43 158);
+  font-size: 10px;
+}

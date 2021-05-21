@@ -1,0 +1,69 @@
+Создание таблицы users  в базе данных petsafe
+
+
+Таблица для хранения зарегистрированных юзеров 
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    login VARCHAR(100) NOT NULL, 
+    salt VARCHAR(100) NOT NULL,
+    hash VARCHAR(200) NOT NULL
+    );
+
+
+При регистрации создаём в таблице новую строчку 
+INSERT INTO users
+  (login, salt, hash)
+VALUES
+  ('Sam Stone', '322323', '197123232323');
+  
+  
+  
+Как УДАЛИТЬ колонку
+ALTER TABLE workers DROP nameSurname;
+  
+Способ ДОБАВИТЬ новую колонку (новая колонка будет следовать после колонки id)
+ALTER TABLE workers ADD COLUMN userID INT NOT NULL AFTER id;
+
+ALTER TABLE clients ADD COLUMN nameSurname VARCHAR(100) NOT NULL AFTER notes;
+
+ALTER TABLE workers ADD COLUMN nameSurname VARCHAR(100) NOT NULL AFTER notes;
+
+
+
+
+
+Создаю столбец "Предложение"  - когда мы отправляем предложение КЛИЕНТУ/ИСПОЛНИТЕЛЮ
+ALTER TABLE clients ADD COLUMN offer VARCHAR(100) NOT NULL AFTER nameSurname;
+
+ALTER TABLE workers ADD COLUMN offer VARCHAR(100) NOT NULL AFTER nameSurname;
+
+
+Создаю столбец "Согласен?" - в нём будет храниться ответ от 
+ALTER TABLE clients ADD COLUMN isAgree VARCHAR(100) NOT NULL AFTER offer;
+
+ALTER TABLE workers ADD COLUMN isAgree VARCHAR(100) NOT NULL AFTER offer;
+
+
+
+Создаю столбец     "Имя того, кто отправил оффер"
+ALTER TABLE clients ADD COLUMN nameSurnameWhoSendOffer VARCHAR(100)  AFTER isAgree;
+
+ALTER TABLE workers ADD COLUMN nameSurnameWhoSendOffer VARCHAR(100)  AFTER isAgree;
+
+
+
+
+
+
+Хочу создать несколько фейковых записей в таблице 
+  INSERT INTO workers
+    (userID, dateFrom, dateTo, price, tel, email, city, street, house, typeOfPet, notes)
+  VALUES
+    ('130', '${dateFrom}', '${dateTo}', '5000', '555555555', 'fake.male@gmail.com', 'Краснодар', 'Дзержинского', '20', 'Кошка', '', 'нет', 'нет' ),
+    ('131', '${dateFrom}', '${dateTo}', '5000', '555555555', 'fake.male@gmail.com', 'Ростов', 'Дзержинского', '20', 'Кошка', '', 'нет', 'нет');`, 
+
+
+
+
+

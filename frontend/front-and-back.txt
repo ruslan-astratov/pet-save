@@ -1,0 +1,51 @@
+Как реализовал отправку изображения с фронта на сервер
+
+
+Front
+
+<iframe name="votar"></iframe>
+<form  method="post" enctype="multipart/form-data" action="http://localhost:3005/upload"  target="votar">
+    <input type="file" name="photo"/>
+    <input type="submit" value="Submit"/>
+</form>  
+
+
+
+
+
+Back
+
+var express = require('express');
+var fileUpload = require('express-fileupload');
+var app = express();
+
+app.use(fileUpload({}));
+
+// // Получаем тело POST и PUT запросов и преобразовываем их В JSON
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.static('public'));
+
+app.get('/', function (req, res) {
+  res.send('Hello World');
+})
+
+
+
+
+app.post('/upload', function(req, res) {
+  req.files.photo.mv('public/images/'+req.files.photo.name);
+  // res.end(req.files.photo.name);
+  // console.log(req.files.photo); // the uploaded file object
+
+  Сервер должен в ответ отправить ссылку на картинку - чтобы мы могли отобразить её  (ссылка будет иметь вид http://localhost:3005/images/название_картинки)
+});
+
+var server = app.listen(3005, function () {
+
+
+  console.log("Example app listening at 3005")
+
+})
+
